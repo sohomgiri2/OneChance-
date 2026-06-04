@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -934,7 +934,7 @@
         }
 
         function triggerWhatsAppIntegration() {
-            const rawBody = "Yes, I accept! ❤️ The galaxy proposal website you built is completely out of this world and so creative! Let's schedule our first real coffee date soon! 🌌💍";
+            const rawBody = "Yes, I accept! ❤️🌌💍";
             const encodedString = encodeURIComponent(rawBody);
             const actionUrl = `https://api.whatsapp.com/send?phone=${TARGET_PHONE}&text=${encodedString}`;
             window.open(actionUrl, '_blank');
