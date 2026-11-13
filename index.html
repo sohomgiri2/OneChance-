@@ -63,7 +63,7 @@ footer{padding:35px 0 45px;border-top:1px solid var(--line);text-align:center;co
 <section class="section" id="message"><div class="wrap"><div class="eyebrow">A note from the heart</div><h2 class="section-title">A little message for you</h2><p class="section-sub">Some words are worth slowing down for.</p>
   <div class="message-card glass"><div style="font-size:2rem">💌</div><div class="message-text" id="typedMessage"></div><span class="cursor" aria-hidden="true"></span><div style="margin-top:22px;color:var(--muted);font-size:.85rem">— with warmth, always</div></div>
 </div></section>
-<section class="section" id="memories"><div class="wrap"><div class="eyebrow">Little pieces of yesterday</div><h2 class="section-title">Our little memories</h2><p class="section-sub">Add your favourite photos to the manifest in the configuration. Tap a photo to see it bigger.</p><div class="memory-grid" id="gallery"></div></div></section>
+<section class="section" id="memories"><div class="wrap"><div class="eyebrow">Little pieces of yesterday</div><h2 class="section-title">Our little memories</h2><p class="section-sub">Upload photo1.png, photo2.jpg and more to the main GitHub repository. They will appear here automatically. Tap a photo to see it bigger.</p><div class="memory-grid" id="gallery"></div></div></section>
 <section class="section" id="special"><div class="wrap grid-2"><div class="special"><div class="eyebrow">Just for you</div><h2 class="section-title">Her special corner</h2><p class="quote">“You deserve gentle days, genuine smiles, and people who make you feel appreciated without asking you to be anything other than yourself.”</p><p class="muted">A tiny reminder: you matter, your feelings matter, and you are allowed to take up space.</p></div>
 <div class="card glass"><div class="eyebrow">A small daily ritual</div><h3>Today's kind reminder</h3><p id="dailyMessage" class="quote">You are doing better than you think.</p><button class="btn small" id="newDaily">Another little reminder ✨</button></div></div></section>
 <section class="section" id="friendship"><div class="wrap"><div class="eyebrow">The good stuff</div><h2 class="section-title">Our friendship</h2><p class="section-sub">Not every day has to be perfect. The meaningful things are often the small ones.</p><div class="grid-3">
@@ -73,7 +73,7 @@ footer{padding:35px 0 45px;border-top:1px solid var(--line);text-align:center;co
 </div></div></section>
 <section class="section" id="apology"><div class="wrap"><div class="message-card glass"><div class="eyebrow">A sincere note</div><h2 class="section-title">If I ever hurt you</h2><p class="quote">“I am sorry for the moments when my words or actions may have hurt you. I never want to dismiss how you felt. I am learning, and I will try to listen better and do better. You do not owe me an immediate reply or forgiveness. I simply wanted to acknowledge it sincerely.”</p><p class="muted">An apology should make space for your feelings, not ask you to carry mine.</p></div></div></section>
 <section class="section" id="romance"><div class="wrap grid-2"><div class="card glass"><div class="eyebrow">A softer shade of affection</div><h2 class="section-title">A little romantic corner</h2><p class="quote">“Some people bring a little extra colour into the world just by being in it.”</p><p class="muted">A gentle appreciation, with no expectations attached. Your happiness and comfort come first.</p></div><div class="card glass"><div style="font-size:2.4rem">🤍</div><h3>A virtual hug?</h3><p class="muted">Only if you feel like one. Sending a little warmth your way.</p><button class="btn" id="hugBtn">Send a virtual hug 🫂</button><div class="game-feedback" id="hugFeedback"></div></div></div></section>
-<section class="section" id="voice"><div class="wrap"><div class="eyebrow">Voices worth keeping</div><h2 class="section-title">Voice memories</h2><p class="section-sub">Place your own recordings in <code>assets/voice/</code> and list them in the configuration.</p><div class="audio-list" id="voiceList"></div></div></section>
+<section class="section" id="voice"><div class="wrap"><div class="eyebrow">Voices worth keeping</div><h2 class="section-title">Voice memories</h2><p class="section-sub">Upload voicenote1.mp3, voicenote2.mp3 and more to the main GitHub repository. They will appear here automatically.</p><div class="audio-list" id="voiceList"></div></div></section>
 <section class="section" id="music"><div class="wrap"><div class="eyebrow">Press play, take a breath</div><h2 class="section-title">Music corner</h2><p class="section-sub">Only the audio files you add will appear here. Nothing plays automatically.</p><div class="glass card" id="musicPlayer"><div class="audio-main"><div class="track-art" id="albumArt">♫</div><div><h3 id="songTitle">Your playlist</h3><div class="muted" id="songCount">Add songs to get started</div></div></div><div class="visualizer" id="musicVisualizer" aria-label="Audio visualizer"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><audio id="musicAudio" controls preload="none" style="width:100%;margin:10px 0 18px"></audio><div class="game-actions"><button class="btn small" id="prevSong">⏮ Previous</button><button class="btn small" id="playSong">▶ Play</button><button class="btn small" id="nextSong">Next ⏭</button><button class="btn secondary small" id="shuffleSong">Shuffle: Off</button><button class="btn secondary small" id="repeatSong">Repeat: Off</button></div><div id="playlist" style="margin-top:15px"></div></div></div></section>
 <section class="section" id="games"><div class="wrap"><div class="eyebrow">A little play break</div><h2 class="section-title">Interactive mini games</h2><p class="section-sub">Four tiny games. No pressure, just a little fun.</p><div class="game-grid">
   <article class="game-card glass"><h3>💗 Catch the hearts</h3><p>Tap as many hearts as you can before the round ends.</p><div class="heart-field" id="heartField"><span class="muted" style="position:absolute;inset:0;display:grid;place-items:center" id="heartHint">Press Start to play</span></div><div class="game-actions" style="margin-top:12px"><button class="btn small" id="heartStart">Start · 15 sec</button><span class="pill">Score: <b id="heartScore">0</b></span><span class="pill" id="heartTime">15s</span></div></article>
@@ -88,7 +88,7 @@ footer{padding:35px 0 45px;border-top:1px solid var(--line);text-align:center;co
   <div class="card glass"><h3>🦋 Hidden messages</h3><p class="muted">A few little notes are tucked away.</p><button class="btn small" id="hiddenNote">Find a hidden message</button><p id="hiddenMessage" class="quote" style="min-height:55px"></p></div>
 </div></div></section>
 <section class="section" id="developer"><div class="wrap"><div class="eyebrow">The creator behind this little world</div><h2 class="section-title">Made with passion</h2><p class="section-sub">A personal creative project, brought to life with care and code.</p>
-<div class="developer-card glass"><div class="developer-inner"><div class="avatar" aria-label="Soham Giri initials">SG</div><div><div class="eyebrow">Created with passion by</div><h2 class="section-title" style="margin:4px 0">Soham Giri</h2><p class="muted" style="margin:0 0 8px">Independent Web Developer · Creative Developer</p><p class="muted" style="max-width:650px">I enjoy turning ideas into thoughtful digital experiences. This website brings together personal storytelling, interactive details, and a creative portfolio space.</p><a class="btn" href="https://www.instagram.com/ITchat_SG_063/" target="_blank" rel="noopener noreferrer">Instagram · @ITchat_SG_063 ↗</a><div class="signature" style="margin-top:15px">— Soham Giri</div></div></div></div>
+<div class="developer-card glass"><div class="developer-inner"><div class="avatar" aria-label="Soham Giri initials">SG</div><div><div class="eyebrow">Created with passion by</div><h2 class="section-title" style="margin:4px 0">Soham Giri</h2><p class="muted" style="margin:0 0 8px">Independent Web Developer · Creative Developer</p><p class="muted" style="max-width:650px">I enjoy turning ideas into thoughtful digital experiences. This website brings together personal storytelling, interactive details, and a creative portfolio space.</p><a class="btn" href="https://www.instagram.com/itz_sg_063/" target="_blank" rel="noopener noreferrer">Instagram · @itz_sg_063 ↗</a><div class="signature" style="margin-top:15px">— Soham Giri</div></div></div></div>
 </div></section>
 <section class="section" id="projects"><div class="wrap"><div class="eyebrow">Independent work & experiments</div><h2 class="section-title">My creative work</h2><p class="section-sub">A home for previous websites and future projects. Add only projects you have actually made.</p><div class="project-grid" id="projectGrid"></div><div id="projectEmpty" class="empty-state hidden">✧ Your project showcase is ready. Add your first real project to <code>DEVELOPER_PROJECTS</code> in the configuration. ✧</div></div></section>
 <section class="section" id="changelog"><div class="wrap grid-2"><div><div class="eyebrow">A little about this release</div><h2 class="section-title">Version notes</h2><p class="muted">Current version <strong id="versionText">2.0.0</strong></p><p class="muted">This page uses a manual version and changelog. Update the configuration when you publish a new release.</p></div><div class="card glass"><h3>What's included</h3><div class="timeline" id="changeLog"></div></div></div></section>
@@ -100,11 +100,11 @@ footer{padding:35px 0 45px;border-top:1px solid var(--line);text-align:center;co
 <script>
 /* ============================================================
    EASY EDIT CONFIGURATION — add your own media and real projects.
-   Paths are relative, so this works on GitHub Pages.
+   Media files uploaded to the repository root are discovered automatically.
    ============================================================ */
 const SITE_CONFIG = {
   version: "2.0.0",
-  developer: { name: "Soham Giri", instagram: "ITchat_SG_063" },
+  developer: { name: "Soham Giri", instagram: "itz_sg_063" },
   photos: [
     // { src: "assets/photos/photo1.jpg", caption: "A favourite little moment" },
     // Add photo2.jpg, photo3.jpg, etc. by adding more objects here.
@@ -143,14 +143,14 @@ $("#menuBtn").addEventListener("click",()=>$("#navLinks").classList.toggle("open
 $("#navLinks").addEventListener("click",e=>{if(e.target.closest("a"))$("#navLinks").classList.remove("open");});
 const note="Thank you for being part of the little moments that matter. I hope this corner of the internet reminds you that you are appreciated, that your smile is worth celebrating, and that the world can still hold soft, beautiful surprises. Keep being wonderfully you.";
 let typed=0;function typeMessage(){if(typed<=note.length){$("#typedMessage").textContent=note.slice(0,typed++);setTimeout(typeMessage,27);}}typeMessage();
-function renderGallery(){const g=$("#gallery");if(!SITE_CONFIG.photos.length){g.innerHTML='<div class="empty-state" style="column-span:all">📷 Your memory wall is ready. Add photo entries to <code>SITE_CONFIG.photos</code> and upload matching files into <code>assets/photos/</code>.</div>';return;}SITE_CONFIG.photos.forEach((p,i)=>{const card=document.createElement("figure");card.className="memory glass";const img=document.createElement("img");img.src=p.src;img.alt=p.alt||p.caption||"Memory photo";img.loading="lazy";img.onerror=()=>{img.remove();const ph=document.createElement("div");ph.className="placeholder-photo";ph.textContent="♡";card.prepend(ph);};img.addEventListener("click",()=>{if(img.isConnected&&img.src){$("#lightboxImage").src=img.src;$("#lightbox").classList.remove("hidden");}});const cap=document.createElement("figcaption");cap.className="caption";cap.textContent=p.caption||`Memory ${i+1}`;card.append(img,cap);g.append(card);});}
+function renderGallery(){const g=$("#gallery");g.innerHTML="";if(!SITE_CONFIG.photos.length){g.innerHTML='<div class="empty-state" style="column-span:all">📷 No photos found yet. Upload files named photo1.png, photo2.jpg, photo3.webp, etc. to the main GitHub repository.</div>';return;}SITE_CONFIG.photos.forEach((p,i)=>{const card=document.createElement("figure");card.className="memory glass";const img=document.createElement("img");img.src=p.src;img.alt=p.alt||p.caption||"Memory photo";img.loading="lazy";img.onerror=()=>{img.remove();const ph=document.createElement("div");ph.className="placeholder-photo";ph.textContent="♡";card.prepend(ph);};img.addEventListener("click",()=>{if(img.isConnected&&img.src){$("#lightboxImage").src=img.src;$("#lightbox").classList.remove("hidden");}});const cap=document.createElement("figcaption");cap.className="caption";cap.textContent=p.caption||`Memory ${i+1}`;card.append(img,cap);g.append(card);});}
 renderGallery();$("#closeLightbox").onclick=()=>$("#lightbox").classList.add("hidden");$("#lightbox").addEventListener("click",e=>{if(e.target.id==="lightbox")$("#lightbox").classList.add("hidden");});document.addEventListener("keydown",e=>{if(e.key==="Escape")$("#lightbox").classList.add("hidden");});
-function renderAudioList(){const list=$("#voiceList");if(!SITE_CONFIG.voiceNotes.length){list.innerHTML='<div class="empty-state">🎙️ No voice notes added yet. Add recordings to <code>assets/voice/</code> and register them in <code>SITE_CONFIG.voiceNotes</code>.</div>';return;}SITE_CONFIG.voiceNotes.forEach((v,i)=>{const row=document.createElement("div");row.className="audio-row glass";row.innerHTML=`<div class="audio-main"><div class="track-art">🎙️</div><div><h4></h4><span class="muted">Voice memory ${i+1}</span><div class="visualizer"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><audio controls preload="none"></audio></div></div>`;row.querySelector("h4").textContent=v.title||`Voice memory ${i+1}`;row.querySelector("audio").src=v.src;list.append(row);});const audios=[...list.querySelectorAll("audio")];audios.forEach(a=>{a.addEventListener("play",()=>{audios.filter(x=>x!==a).forEach(x=>x.pause());a.closest(".audio-row").querySelector(".visualizer").classList.add("playing");});a.addEventListener("pause",()=>a.closest(".audio-row").querySelector(".visualizer").classList.remove("playing"));a.addEventListener("ended",()=>a.closest(".audio-row").querySelector(".visualizer").classList.remove("playing"));});}
+function renderAudioList(){const list=$("#voiceList");list.innerHTML="";if(!SITE_CONFIG.voiceNotes.length){list.innerHTML='<div class="empty-state">🎙️ No voice notes found yet. Upload files named voicenote1.mp3, voicenote2.m4a, etc. to the main GitHub repository.</div>';return;}SITE_CONFIG.voiceNotes.forEach((v,i)=>{const row=document.createElement("div");row.className="audio-row glass";row.innerHTML=`<div class="audio-main"><div class="track-art">🎙️</div><div><h4></h4><span class="muted">Voice memory ${i+1}</span><div class="visualizer"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><audio controls preload="none"></audio></div></div>`;row.querySelector("h4").textContent=v.title||`Voice memory ${i+1}`;row.querySelector("audio").src=v.src;list.append(row);});const audios=[...list.querySelectorAll("audio")];audios.forEach(a=>{a.addEventListener("play",()=>{audios.filter(x=>x!==a).forEach(x=>x.pause());a.closest(".audio-row").querySelector(".visualizer").classList.add("playing");});a.addEventListener("pause",()=>a.closest(".audio-row").querySelector(".visualizer").classList.remove("playing"));a.addEventListener("ended",()=>a.closest(".audio-row").querySelector(".visualizer").classList.remove("playing"));});}
 renderAudioList();
 const music=$("#musicAudio");let songIndex=0,shuffle=false,repeat=false;
 function renderMusic(){const pl=$("#playlist");pl.innerHTML="";$("#songCount").textContent=SITE_CONFIG.songs.length?`${SITE_CONFIG.songs.length} track${SITE_CONFIG.songs.length===1?"":"s"} in your playlist`:"Add songs to get started";if(!SITE_CONFIG.songs.length){$("#songTitle").textContent="Your playlist is waiting";music.removeAttribute("src");return;}songIndex=(songIndex+SITE_CONFIG.songs.length)%SITE_CONFIG.songs.length;const song=SITE_CONFIG.songs[songIndex];$("#songTitle").textContent=song.title||`Track ${songIndex+1}`;music.src=song.src;SITE_CONFIG.songs.forEach((s,i)=>{const b=document.createElement("button");b.className="quiz-option";b.textContent=(i===songIndex?"♫ ":"")+s.title||`Track ${i+1}`;b.onclick=()=>{songIndex=i;renderMusic();music.play().catch(()=>toast("Tap play to start the song."));};pl.append(b);});}
 renderMusic();
-$("#playSong").onclick=()=>{if(!SITE_CONFIG.songs.length)return toast("Add your own songs in the configuration first.");if(music.paused)music.play().then(()=>$("#playSong").textContent="Ⅱ Pause").catch(()=>toast("Please tap play again."));else{music.pause();$("#playSong").textContent="▶ Play";}};
+$("#playSong").onclick=()=>{if(!SITE_CONFIG.songs.length)return toast("Upload song1.mp3, song2.mp3 and more to the main GitHub repository first.");if(music.paused)music.play().then(()=>$("#playSong").textContent="Ⅱ Pause").catch(()=>toast("Please tap play again."));else{music.pause();$("#playSong").textContent="▶ Play";}};
 function nextTrack(){if(!SITE_CONFIG.songs.length)return;if(shuffle&&SITE_CONFIG.songs.length>1){let n;do{n=Math.floor(Math.random()*SITE_CONFIG.songs.length);}while(n===songIndex);songIndex=n;}else songIndex=(songIndex+1)%SITE_CONFIG.songs.length;renderMusic();music.play().catch(()=>{});}
 $("#nextSong").onclick=nextTrack;$("#prevSong").onclick=()=>{if(!SITE_CONFIG.songs.length)return;songIndex=(songIndex-1+SITE_CONFIG.songs.length)%SITE_CONFIG.songs.length;renderMusic();music.play().catch(()=>{});};music.addEventListener("play",()=>$("#musicVisualizer").classList.add("playing"));music.addEventListener("pause",()=>$("#musicVisualizer").classList.remove("playing"));music.addEventListener("ended",()=>$("#musicVisualizer").classList.remove("playing"));music.addEventListener("ended",()=>{if(repeat){music.currentTime=0;music.play();}else if(songIndex<SITE_CONFIG.songs.length-1||shuffle)nextTrack();else $("#playSong").textContent="▶ Play";});
 $("#shuffleSong").onclick=()=>{shuffle=!shuffle;$("#shuffleSong").textContent=`Shuffle: ${shuffle?"On":"Off"}`;};$("#repeatSong").onclick=()=>{repeat=!repeat;$("#repeatSong").textContent=`Repeat: ${repeat?"On":"Off"}`;};
@@ -168,5 +168,85 @@ const hiddenNotes=["You don't have to be perfect to be wonderful.","Your laugh d
 function renderProjects(){const grid=$("#projectGrid");grid.innerHTML="";if(!DEVELOPER_PROJECTS.length){$("#projectEmpty").classList.remove("hidden");return;}$("#projectEmpty").classList.add("hidden");DEVELOPER_PROJECTS.forEach(p=>{const c=document.createElement("article");c.className="project-card glass";const img=document.createElement("img");img.src=p.image||"";img.alt=p.title||"Project preview";img.loading="lazy";img.onerror=()=>{img.style.display="none";};const body=document.createElement("div");body.className="project-content";const h=document.createElement("h3");h.textContent=p.title||"Untitled project";const d=document.createElement("p");d.className="muted";d.textContent=p.description||"";body.append(h,d);if(p.technologies?.length){const tags=document.createElement("div");tags.className="tags";p.technologies.forEach(t=>{const s=document.createElement("span");s.textContent=t;tags.append(s);});body.append(tags);}const actions=document.createElement("div");actions.className="game-actions";if(p.liveUrl){const a=document.createElement("a");a.className="btn small";a.href=p.liveUrl;a.target="_blank";a.rel="noopener noreferrer";a.textContent="Live website ↗";actions.append(a);}if(p.githubUrl){const a=document.createElement("a");a.className="btn secondary small";a.href=p.githubUrl;a.target="_blank";a.rel="noopener noreferrer";a.textContent="GitHub ↗";actions.append(a);}if(actions.children.length)body.append(actions);c.append(img,body);grid.append(c);});}
 renderProjects();
 $("#versionText").textContent=SITE_CONFIG.version;$("#footerVersion").textContent=SITE_CONFIG.version;$("#changeLog").innerHTML="";SITE_CONFIG.changelog.forEach(item=>{const div=document.createElement("div");div.className="timeline-item";const h=document.createElement("strong");h.textContent=`v${item.version} · ${item.date}`;const p=document.createElement("p");p.className="muted";p.textContent=item.description;div.append(h,p);$("#changeLog").append(div);});
+
+/* ============================================================
+   AUTOMATIC ROOT MEDIA LOADER
+   Upload media files beside index.html in the GitHub repository:
+   photo1.png, song1.mp3, voicenote1.mp3, etc.
+   ============================================================ */
+async function loadRootMedia(){
+  const api = "https://api.github.com/repos/sohomgiri2/OneChance-/contents/?ref=main";
+  try {
+    const response = await fetch(api, {
+      headers: { "Accept": "application/vnd.github+json" },
+      cache: "no-store"
+    });
+    if(!response.ok) throw new Error("GitHub file list unavailable");
+    const files = await response.json();
+    if(!Array.isArray(files)) throw new Error("Unexpected GitHub response");
+
+    const photos = [];
+    const songs = [];
+    const voiceNotes = [];
+
+    files.forEach(file => {
+      if(file.type !== "file" || !file.name || !file.download_url) return;
+      const name = file.name;
+      let match;
+
+      match = name.match(/^photo(\d+)\.(png|jpe?g|webp|gif)$/i);
+      if(match){
+        photos.push({
+          number: Number(match[1]),
+          src: file.download_url,
+          caption: "Memory " + match[1],
+          alt: "Friendship memory " + match[1]
+        });
+        return;
+      }
+
+      match = name.match(/^song(\d+)\.(mp3|m4a|ogg|wav|aac)$/i);
+      if(match){
+        songs.push({
+          number: Number(match[1]),
+          title: "Song " + match[1],
+          src: file.download_url
+        });
+        return;
+      }
+
+      match = name.match(/^(?:voicenote|voice[-_]?note|voice)(\d+)\.(mp3|m4a|ogg|wav|aac)$/i);
+      if(match){
+        voiceNotes.push({
+          number: Number(match[1]),
+          title: "Voice Note " + match[1],
+          src: file.download_url
+        });
+      }
+    });
+
+    const byNumber = (a,b) => a.number - b.number;
+    photos.sort(byNumber);
+    songs.sort(byNumber);
+    voiceNotes.sort(byNumber);
+
+    // Keep any manually configured items, then append root uploads.
+    SITE_CONFIG.photos = [...SITE_CONFIG.photos, ...photos];
+    SITE_CONFIG.songs = [...SITE_CONFIG.songs, ...songs];
+    SITE_CONFIG.voiceNotes = [...SITE_CONFIG.voiceNotes, ...voiceNotes];
+
+    renderGallery();
+    renderAudioList();
+    renderMusic();
+
+    const total = photos.length + songs.length + voiceNotes.length;
+    if(total) console.info("ONECHANCE: loaded " + total + " root media file(s).");
+  } catch(error) {
+    console.warn("ONECHANCE media auto-loader:", error);
+    // The website remains usable even if GitHub's public API is unavailable.
+  }
+}
+loadRootMedia();
+
 </script>
 </body></html>
