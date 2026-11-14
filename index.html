@@ -3,81 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#08090b">
-<meta name="description" content="A quiet place for memories, photographs, voice notes and songs.">
+<meta name="theme-color" content="#07080a">
+<meta name="description" content="A quiet little universe of photographs, voices, songs and words.">
 <title>Until You Read This...</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
-:root{--bg:#08090b;--panel:rgba(255,255,255,.055);--line:rgba(255,255,255,.11);--muted:#92949d;--text:#f4f3f0;--accent:#d7c6aa;--radius:24px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(ellipse at 15% 10%,rgba(117,104,87,.18),transparent 35%),radial-gradient(ellipse at 90% 75%,rgba(76,83,101,.16),transparent 38%),#08090b}
-.noise{position:fixed;inset:0;pointer-events:none;opacity:.035;z-index:20;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
-a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer;border:0}button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-.topbar{position:fixed;z-index:10;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(18px,5vw,64px);background:linear-gradient(180deg,rgba(8,9,11,.88),rgba(8,9,11,.2));backdrop-filter:blur(18px)}
-.brand{font:500 11px 'DM Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#e9e5de}.brand span{color:var(--muted)}
-.nav{display:flex;gap:22px;align-items:center}.nav a{font-size:12px;color:#b9bac0;transition:.25s}.nav a:hover{color:white}
-.pill{border:1px solid var(--line);background:rgba(255,255,255,.06);padding:10px 14px;border-radius:99px;font-size:11px;letter-spacing:.08em;backdrop-filter:blur(16px)}
-.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:120px 22px 70px;position:relative;overflow:hidden}
-.orb{position:absolute;width:min(70vw,620px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(198,176,143,.13),rgba(110,111,126,.045) 42%,transparent 70%);filter:blur(8px);animation:float 9s ease-in-out infinite;pointer-events:none}
-@keyframes float{50%{transform:translate(12px,-18px) scale(1.06)}}
-.hero-inner{position:relative;max-width:850px;animation:rise 1.1s both}.eyebrow{font:11px 'DM Mono',monospace;letter-spacing:.28em;color:var(--accent);text-transform:uppercase}
-h1{font:500 clamp(48px,10vw,112px)/.98 'Playfair Display',serif;letter-spacing:-.055em;margin:28px 0 22px}h1 em{font-weight:500;color:#c9b99f}
-.hero-sub{font-size:14px;line-height:1.8;color:#a5a5ab;max-width:440px;margin:0 auto 34px}
-.primary{background:#e9e2d7;color:#151515;padding:14px 22px;border-radius:99px;font-size:12px;font-weight:700;letter-spacing:.06em;transition:.25s;box-shadow:0 8px 35px #0008}.primary:hover{transform:translateY(-2px);background:white}
-.scrollhint{position:absolute;bottom:28px;font:10px 'DM Mono',monospace;letter-spacing:.2em;color:#777}
-section{padding:100px clamp(18px,6vw,88px);max-width:1440px;margin:auto;scroll-margin-top:70px}
-.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:34px}.kicker{font:10px 'DM Mono',monospace;color:var(--accent);letter-spacing:.22em;text-transform:uppercase}.section-head h2{font:500 clamp(34px,5vw,58px)/1.05 'Playfair Display',serif;margin:12px 0 0;letter-spacing:-.035em}.section-head p{max-width:300px;color:var(--muted);font-size:12px;line-height:1.7;margin:0}
-.glass{background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.025));border:1px solid var(--line);box-shadow:0 20px 70px rgba(0,0,0,.24),inset 0 1px rgba(255,255,255,.06);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-radius:var(--radius)}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:#17181c;border-radius:20px;border:1px solid var(--line);cursor:pointer}.photo img{width:100%;height:100%;object-fit:cover;transition:transform .7s,filter .5s;filter:saturate(.82)}.photo:hover img{transform:scale(1.055);filter:saturate(1)}.photo:after{content:"";position:absolute;inset:45% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.55));pointer-events:none}.photo-label{position:absolute;z-index:1;bottom:15px;left:16px;font:10px 'DM Mono',monospace;letter-spacing:.12em;color:#fff}
-.empty{grid-column:1/-1;padding:42px 20px;text-align:center;color:var(--muted);font-size:13px;line-height:1.8}.empty strong{display:block;color:#e5e0d8;font:500 24px 'Playfair Display';margin-bottom:8px}
-.letter-wrap{max-width:850px;margin:auto;padding:clamp(26px,6vw,70px);position:relative;overflow:hidden}.letter-wrap:before{content:"“";position:absolute;right:35px;top:0;font:180px 'Playfair Display';color:rgba(255,255,255,.045)}.letter-meta{font:10px 'DM Mono',monospace;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;margin-bottom:30px}.letter{font:clamp(15px,1.6vw,18px)/1.95 'DM Sans',sans-serif;color:#dedbd5;white-space:pre-line;position:relative}.letter p{margin:0 0 22px}.letter .signoff{font-family:'Playfair Display',serif;font-style:italic;color:#d5c4a8}.reveal-btn{display:block;margin:28px auto 0}
-.audio-list{display:grid;gap:12px}.audio-card{display:grid;grid-template-columns:48px 1fr auto;align-items:center;gap:16px;padding:17px 19px}.play{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);display:grid;place-items:center;border:1px solid var(--line);font-size:15px}.track-title{font-size:14px;font-weight:600}.track-sub{font:10px 'DM Mono',monospace;color:var(--muted);margin-top:5px}.track-duration{font:11px 'DM Mono',monospace;color:var(--muted)}
-.player{position:fixed;z-index:15;left:50%;bottom:18px;transform:translateX(-50%);width:min(650px,calc(100% - 28px));padding:12px 16px;display:none;grid-template-columns:38px 1fr auto;gap:12px;align-items:center}.player.show{display:grid}.player-info{min-width:0}.player-title{font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.player-time{font:9px 'DM Mono';color:var(--muted);margin-top:4px}.player input{width:100%;accent-color:#d7c6aa;margin-top:8px}
-.lightbox{position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;padding:20px}.lightbox.open{display:flex}.lightbox img{max-width:min(92vw,1100px);max-height:85vh;object-fit:contain;border-radius:12px}.close{position:absolute;top:22px;right:22px;background:#ffffff18;border:1px solid #ffffff33;border-radius:50%;width:42px;height:42px;font-size:20px}
-footer{padding:65px 20px 110px;text-align:center;border-top:1px solid rgba(255,255,255,.07)}footer .credit{font:10px 'DM Mono';letter-spacing:.2em;color:#777;text-transform:uppercase}footer strong{display:block;font:500 25px 'Playfair Display';margin:12px 0;color:#d8c9b3}footer p{font-size:11px;color:#777}
-.toast{position:fixed;z-index:40;bottom:95px;left:50%;transform:translateX(-50%);background:#24252a;border:1px solid var(--line);padding:10px 15px;border-radius:99px;font-size:11px;color:#ddd;display:none}.toast.show{display:block}
-@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:700px){.nav{gap:12px}.nav a{font-size:10px}.nav a:nth-child(2){display:none}.topbar{padding:15px 17px}.gallery{grid-template-columns:repeat(2,1fr);gap:9px}.section-head{display:block}.section-head p{margin-top:12px}.audio-card{padding:13px;gap:11px}.hero{min-height:92svh}section{padding-top:75px;padding-bottom:75px}}
+:root{--bg:#07080a;--fg:#f4f0e9;--muted:#9999a1;--gold:#d9c5a2;--line:rgba(255,255,255,.13);--glass:rgba(255,255,255,.055);--ease:cubic-bezier(.2,.75,.25,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--fg);font-family:'DM Sans',sans-serif;overflow-x:hidden}body.lock{overflow:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-5;background:radial-gradient(ellipse at 12% 8%,#51433238,transparent 34%),radial-gradient(ellipse at 88% 58%,#323b5038,transparent 38%),#07080a}
+.noise{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+#stars{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.6}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer;border:0}button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.cursor-glow{position:fixed;z-index:-1;width:360px;height:360px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,#d4bd9410,transparent 68%);transform:translate(-50%,-50%)}
+.preloader{position:fixed;inset:0;z-index:100;background:#08090b;display:grid;place-items:center;transition:opacity 1s,visibility 1s}.preloader.done{opacity:0;visibility:hidden}.preload-inner{text-align:center}.preload-mark{font:italic 38px 'Playfair Display';color:var(--gold);animation:pulse 1.6s infinite}.preload-line{width:150px;height:1px;background:#ffffff20;margin:22px auto;overflow:hidden}.preload-line:after{content:"";display:block;width:45%;height:100%;background:var(--gold);animation:loading 1.2s ease-in-out infinite}
+@keyframes loading{from{transform:translateX(-110%)}to{transform:translateX(330%)}}@keyframes pulse{50%{opacity:.45;transform:scale(.97)}
+}
+.topbar{position:fixed;z-index:30;top:0;left:0;right:0;padding:17px clamp(16px,5vw,70px);display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,#08090be8,#08090b70);backdrop-filter:blur(22px);border-bottom:1px solid #ffffff09;transition:.4s}
+.brand{font:11px 'DM Mono';letter-spacing:.2em}.brand span{color:var(--gold)}.nav{display:flex;gap:clamp(12px,2.5vw,30px);align-items:center}.nav a{font:9px 'DM Mono';letter-spacing:.12em;color:#b9b8ba;transition:.3s}.nav a:hover{color:var(--gold)}.nav .nav-cta{padding:10px 14px;border:1px solid #ffffff28;border-radius:99px;color:#eee}
+.sound-toggle{width:35px;height:35px;border-radius:50%;border:1px solid var(--line);background:#ffffff09;display:grid;place-items:center;font-size:13px}
+.hero{height:100svh;min-height:690px;display:grid;place-items:center;position:relative;overflow:hidden;text-align:center;padding:100px 20px 65px}
+.hero-backdrop{position:absolute;inset:-5%;background:radial-gradient(ellipse at 50% 48%,#a88f6b18,transparent 35%),radial-gradient(ellipse at 50% 90%,#727e9a10,transparent 40%);animation:breath 9s ease-in-out infinite alternate}
+@keyframes breath{to{transform:scale(1.12);filter:brightness(1.5)}}
+.hero-ring{position:absolute;width:min(75vw,680px);aspect-ratio:1;border:1px solid #ffffff0b;border-radius:50%;animation:rotate 60s linear infinite}.hero-ring:before,.hero-ring:after{content:"";position:absolute;border:1px solid #ffffff0a;border-radius:50%;inset:10%}.hero-ring:after{inset:22%}
+@keyframes rotate{to{transform:rotate(360deg)}}
+.hero-content{position:relative;z-index:2;max-width:850px}.eyebrow{font:10px 'DM Mono';letter-spacing:.34em;color:var(--gold);text-transform:uppercase;opacity:0;animation:up .9s .3s forwards}
+.hero h1{font:500 clamp(58px,11vw,132px)/.88 'Playfair Display';letter-spacing:-.065em;margin:30px 0 26px;opacity:0;animation:up 1.1s .5s forwards}.hero h1 em{font-weight:500;color:#c9b695}.hero-sub{font-size:13px;line-height:1.9;color:#aaa9ad;max-width:420px;margin:0 auto 34px;opacity:0;animation:up 1s .8s forwards}
+.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;opacity:0;animation:up 1s 1s forwards}
+.btn{padding:14px 21px;border-radius:99px;font-size:10px;letter-spacing:.11em;font-weight:700;transition:transform .3s,background .3s,border .3s}.btn:hover{transform:translateY(-4px)}.btn-light{background:#e7dfd1;color:#151515;box-shadow:0 10px 40px #0008}.btn-ghost{border:1px solid #ffffff30;background:#ffffff08;backdrop-filter:blur(12px)}
+.hero-foot{position:absolute;bottom:27px;left:0;right:0;display:flex;justify-content:space-between;padding:0 clamp(20px,5vw,70px);font:9px 'DM Mono';letter-spacing:.16em;color:#777}
+.scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font:9px 'DM Mono';letter-spacing:.18em;color:#a4a0a0}.scroll-cue i{display:block;width:1px;height:30px;background:linear-gradient(var(--gold),transparent);margin:12px auto 0;animation:scrollline 1.5s infinite}
+@keyframes scrollline{50%{transform:scaleY(.5);transform-origin:top;opacity:.4}}
+@keyframes up{from{opacity:0;transform:translateY(28px);filter:blur(7px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+main{position:relative}.section{max-width:1500px;margin:auto;padding:clamp(78px,10vw,140px) clamp(18px,7vw,100px);position:relative}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:42px}.index{font:10px 'DM Mono';letter-spacing:.25em;color:var(--gold)}h2{font:500 clamp(38px,6vw,70px)/1 'Playfair Display';letter-spacing:-.04em;margin:13px 0 0}.section-desc{max-width:310px;color:var(--muted);font-size:12px;line-height:1.8;margin:0}
+.reveal{opacity:0;transform:translateY(38px);filter:blur(5px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s}.reveal.visible{opacity:1;transform:none;filter:none}
+.glass{background:linear-gradient(135deg,rgba(255,255,255,.085),rgba(255,255,255,.018));border:1px solid var(--line);box-shadow:0 25px 80px #0005,inset 0 1px #ffffff0b;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-radius:25px}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:15px}.photo{position:relative;grid-column:span 4;aspect-ratio: .83;overflow:hidden;border-radius:19px;border:1px solid #ffffff18;background:linear-gradient(145deg,#242329,#111216);padding:0;text-align:left;isolation:isolate}.photo:nth-child(5n+2){grid-column:span 5;aspect-ratio:1.08}.photo:nth-child(5n+3){grid-column:span 3;aspect-ratio:.83}.photo img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.75) brightness(.87);transition:transform 1s var(--ease),filter .7s}.photo:hover img{transform:scale(1.07);filter:saturate(1) brightness(1)}.photo:after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,#0009);z-index:1}.photo-caption{position:absolute;bottom:17px;left:18px;z-index:2;font:9px 'DM Mono';letter-spacing:.17em;text-transform:uppercase}.photo-number{position:absolute;top:14px;right:15px;z-index:2;font:9px 'DM Mono';color:#fff9}
+.empty{grid-column:1/-1;padding:50px 22px;text-align:center;color:#999;font-size:12px;line-height:1.9}.empty b{display:block;font:italic 29px 'Playfair Display';color:#ded5c7;margin-bottom:9px;font-weight:500}.empty small{display:block;color:#777;font:10px 'DM Mono';margin-top:8px}
+.gallery-toolbar{display:flex;justify-content:space-between;align-items:center;margin-top:18px;color:#777;font:9px 'DM Mono';letter-spacing:.12em}.text-btn{background:transparent;color:var(--gold);font:10px 'DM Mono';letter-spacing:.12em}
+.letter-shell{max-width:930px;margin:auto;padding:clamp(25px,6vw,78px);position:relative;overflow:hidden}.letter-shell:before{content:"“";position:absolute;top:-38px;right:28px;font:220px 'Playfair Display';color:#ffffff08}.letter-top{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #ffffff18;padding-bottom:20px;margin-bottom:32px;font:9px 'DM Mono';letter-spacing:.2em;color:var(--gold)}.letter{position:relative;color:#e2ded7;font-size:clamp(14px,1.5vw,17px);line-height:2.05;white-space:normal}.letter p{margin:0 0 24px}.letter p:last-child{font:italic 23px/1.6 'Playfair Display';color:#d7c4a5;margin-top:34px}.letter-tools{display:flex;justify-content:space-between;align-items:center;margin-top:32px;padding-top:20px;border-top:1px solid #ffffff18}.letter-tools span{font:9px 'DM Mono';letter-spacing:.15em;color:#777}.copy-btn{border:1px solid #ffffff26;background:#ffffff09;border-radius:99px;padding:10px 15px;font:9px 'DM Mono';letter-spacing:.1em}
+.audio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.audio-card{padding:17px;display:grid;grid-template-columns:54px 1fr auto;gap:14px;align-items:center;transition:transform .35s,border .35s}.audio-card:hover{transform:translateY(-3px);border-color:#d7c6a255}.play{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#ffffff12;border:1px solid #ffffff20;color:#eee;font-size:15px;transition:.3s}.play:hover{background:#e4d7c1;color:#111}.audio-title{font-size:13px;font-weight:600}.audio-sub{font:9px 'DM Mono';letter-spacing:.13em;color:#8c8b91;margin-top:6px}.duration{font:10px 'DM Mono';color:#9b9995}
+.sound-wave{height:22px;display:flex;align-items:center;gap:3px;margin-top:11px}.sound-wave i{display:block;width:2px;border-radius:5px;background:#cbb99555;height:var(--h);animation:wave 1s ease-in-out infinite alternate;animation-play-state:paused}.audio-card.playing .sound-wave i{animation-play-state:running}.sound-wave i:nth-child(2n){animation-delay:.2s}.sound-wave i:nth-child(3n){animation-delay:.4s}
+@keyframes wave{to{height:4px;background:#d9c5a2}}
+.now-player{position:fixed;z-index:35;bottom:17px;left:50%;transform:translate(-50%,130%);width:min(700px,calc(100% - 24px));padding:12px 16px;display:grid;grid-template-columns:42px 1fr auto;gap:13px;align-items:center;transition:transform .55s var(--ease);box-shadow:0 15px 70px #000b}.now-player.show{transform:translate(-50%,0)}.now-title{font-size:11px;font-weight:600}.now-time{font:9px 'DM Mono';color:#aaa;margin-top:4px}.now-player input{width:100%;accent-color:var(--gold);height:3px;margin-top:7px}.player-close{background:transparent;color:#aaa;font-size:18px;padding:6px}
+.quote-band{margin:0 clamp(18px,7vw,100px) 80px;padding:clamp(35px,6vw,75px);text-align:center;border-radius:28px;background:radial-gradient(ellipse at 50% 0%,#bda57b1a,transparent 70%),#ffffff04;border:1px solid #ffffff0c}.quote-band .mark{font:60px 'Playfair Display';color:#cbb995}.quote-band p{font:italic clamp(24px,4vw,43px)/1.35 'Playfair Display';max-width:750px;margin:0 auto;color:#ddd3c4}.quote-band small{display:block;font:9px 'DM Mono';letter-spacing:.22em;color:#777;margin-top:24px}
+footer{text-align:center;padding:70px 20px 120px;border-top:1px solid #ffffff0c}footer .credit{font:9px 'DM Mono';letter-spacing:.25em;color:#777}footer strong{display:block;font:500 30px 'Playfair Display';color:#d8c5a7;margin:13px 0}footer p{font-size:10px;color:#777}
+.lightbox{position:fixed;inset:0;z-index:70;background:#030304f2;display:none;align-items:center;justify-content:center;padding:22px;backdrop-filter:blur(20px)}.lightbox.open{display:flex;animation:fade .3s}.lightbox img{max-width:92vw;max-height:86vh;object-fit:contain;border-radius:12px;box-shadow:0 20px 90px #000}.lightbox button{position:absolute;top:22px;right:22px;background:#ffffff14;border:1px solid #ffffff35;border-radius:50%;width:43px;height:43px;font-size:20px}
+.toast{position:fixed;z-index:90;bottom:100px;left:50%;transform:translateX(-50%);background:#24242a;border:1px solid #ffffff25;border-radius:99px;padding:11px 17px;font:10px 'DM Mono';display:none}.toast.show{display:block;animation:up .25s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media(max-width:760px){.nav{gap:11px}.nav a{font-size:8px}.nav a:nth-child(2){display:none}.topbar{padding:14px 15px}.brand{font-size:9px}.hero{min-height:650px}.hero-foot{display:none}.scroll-cue{bottom:22px}.section-head{display:block}.section-desc{margin-top:15px}.gallery{grid-template-columns:repeat(2,1fr);gap:9px}.photo,.photo:nth-child(5n+2),.photo:nth-child(5n+3){grid-column:span 1;aspect-ratio:.78}.photo:nth-child(4n+1){aspect-ratio:.95}.audio-grid{grid-template-columns:1fr}.letter-shell{padding:25px 21px}.letter-top{font-size:8px}.quote-band{margin-bottom:50px}.audio-card{padding:13px;grid-template-columns:45px 1fr auto;gap:10px}.play{width:42px;height:42px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style>
 </head>
-<body>
-<div class="noise"></div>
+<body class="lock">
+<div class="preloader" id="preloader"><div class="preload-inner"><div class="preload-mark">Until you read this...</div><div class="preload-line"></div><div class="eyebrow">A MOMENT, PRESERVED</div></div></div>
+<canvas id="stars"></canvas><div class="noise"></div><div class="cursor-glow" id="glow"></div>
 <header class="topbar">
   <a class="brand" href="#home">UNTIL YOU READ THIS<span>...</span></a>
-  <nav class="nav"><a href="#photos">PHOTOS</a><a href="#voice">VOICE NOTES</a><a href="#songs">SONGS</a><a href="#letter" class="pill">THE LETTER ↗</a></nav>
+  <nav class="nav"><a href="#photos">PHOTOS</a><a href="#voice">VOICE NOTES</a><a href="#songs">SONGS</a><a class="nav-cta" href="#letter">THE LETTER ↗</a></nav>
 </header>
 <main>
 <section class="hero" id="home">
-  <div class="orb"></div>
-  <div class="hero-inner">
+  <div class="hero-backdrop"></div><div class="hero-ring"></div>
+  <div class="hero-content">
     <div class="eyebrow">A QUIET PLACE FOR MEMORIES</div>
     <h1>Until you<br><em>read this...</em></h1>
-    <p class="hero-sub">Some moments stay with us a little longer. This is a small collection of photographs, voices, songs and words worth keeping.</p>
-    <a class="primary" href="#photos">ENTER THE EXPERIENCE&nbsp; ↗</a>
+    <p class="hero-sub">Some moments stay with us a little longer. A small universe of photographs, voices, songs and words worth keeping.</p>
+    <div class="hero-actions"><a class="btn btn-light" href="#photos">EXPLORE THE MEMORIES&nbsp; ↗</a><a class="btn btn-ghost" href="#letter">READ THE LETTER</a></div>
   </div>
-  <div class="scrollhint">SCROLL TO EXPLORE&nbsp; ↓</div>
+  <div class="hero-foot"><span>VOL. 01 &nbsp; / &nbsp; PERSONAL ARCHIVE</span><span>MADE WITH CARE &nbsp; ✳</span></div>
+  <div class="scroll-cue">SCROLL TO DISCOVER<i></i></div>
 </section>
 
-<section id="photos">
-  <div class="section-head"><div><div class="kicker">01 / THE GALLERY</div><h2>Your Photos</h2></div><p>A collection of frames, little details and moments captured in time.</p></div>
-  <div class="gallery" id="gallery"><div class="empty glass"><strong>Photographs will appear here</strong>Add photo1.jpg, photo2.jpg, photo3.jpg… beside index.html in your GitHub repository.</div></div>
+<section class="section reveal" id="photos">
+  <div class="section-head"><div><div class="index">01 &nbsp; / &nbsp; THE GALLERY</div><h2>Your Photos</h2></div><p>A collection of frames, little details and moments captured in time. Each photograph has its own place here.</p></div>
+  <div class="gallery" id="gallery"><div class="empty glass"><b>Photographs will appear here</b>Add photo1.jpg, photo2.jpg, photo3.jpg… beside index.html.<small>NUMBERED FILES · AUTOMATIC GALLERY</small></div></div>
+  <div class="gallery-toolbar"><span id="photoCount">WAITING FOR PHOTOGRAPHS</span><span>SELECT ANY FRAME TO ENLARGE ↗</span></div>
 </section>
 
-<section id="voice">
-  <div class="section-head"><div><div class="kicker">02 / THE VOICE</div><h2>Your Voice Notes</h2></div><p>Some voices have a way of making an ordinary moment feel familiar.</p></div>
-  <div class="audio-list" id="voices"><div class="empty glass"><strong>Voice notes will appear here</strong>Add voicenote1.mp3, voicenote2.mp3, voicenote3.mp3…</div></div>
+<section class="section reveal" id="voice">
+  <div class="section-head"><div><div class="index">02 &nbsp; / &nbsp; THE VOICE</div><h2>Your Voice Notes</h2></div><p>Some voices have a way of making an ordinary moment feel familiar. Listen whenever you like.</p></div>
+  <div class="audio-grid" id="voices"><div class="empty glass"><b>Voice notes will appear here</b>Add voicenote1.mp3, voicenote2.mp3, voicenote3.mp3…</div></div>
 </section>
 
-<section id="songs">
-  <div class="section-head"><div><div class="kicker">03 / THE SOUNDTRACK</div><h2>Songs</h2></div><p>Press play, take a breath, and let the music do what words sometimes cannot.</p></div>
-  <div class="audio-list" id="songsList"><div class="empty glass"><strong>Your playlist is waiting</strong>Add song1.mp3, song2.mp3, song3.mp3…</div></div>
+<section class="section reveal" id="songs">
+  <div class="section-head"><div><div class="index">03 &nbsp; / &nbsp; THE SOUNDTRACK</div><h2>Songs</h2></div><p>A few songs to press play on. No rush, no noise — just music.</p></div>
+  <div class="audio-grid" id="songsList"><div class="empty glass"><b>Your playlist is waiting</b>Add song1.mp3, song2.mp3, song3.mp3…</div></div>
 </section>
 
-<section id="letter">
-  <div class="section-head"><div><div class="kicker">04 / SOMETHING TO SAY</div><h2>The Letter</h2></div><p>Read it whenever you feel ready. There is no rush.</p></div>
-  <article class="letter-wrap glass">
-    <div class="letter-meta">A LETTER · FROM THE HEART</div>
+<section class="section reveal" id="letter">
+  <div class="section-head"><div><div class="index">04 &nbsp; / &nbsp; SOMETHING TO SAY</div><h2>The Letter</h2></div><p>Some things are easier to write than to say. Read it whenever you feel ready.</p></div>
+  <article class="letter-shell glass">
+    <div class="letter-top"><span>A LETTER · FROM THE HEART</span><span>14 NOVEMBER</span></div>
     <div class="letter" id="letterText">
 <p>If I hurt you, I'm sorry. Amar kokhono intention chilo na tomake hurt korar. Ar sotti bolte, you were the one who used to make my days enjoyable. Jar sathe mon khule kotha bolte partam, jar sathe kotha bole sob kharap din-o ektu valo hoye jeto. But akhon 🙂 kichu bolar nei.</p>
 <p>Honestly, sobtheke baje din gulo katachhi ekhon. Onek karon ache tomar sathe kotha bolar. Tomar sathe kotha bondho howar next day thekei jor, ekhono thik hoyni. Pray 8 din hoye gelo, temperature 100°F-er nichei namche na. Tobuo ami sarata somoy wait kore gechi, ei ashay je hoyto tomar ekta message ashbe, at least ekta last message.</p>
@@ -87,90 +104,47 @@ footer{padding:65px 20px 110px;text-align:center;border-top:1px solid rgba(255,2
 <p>Tobuo opekkha thakbe. Oi ID-ta ekhono thakbe. Jodi konodin tomar mon hoy, jodi kokhono mone hoy amar sathe kotha bolbe, message korte paro. Available thakbo, jodi beche thaki.</p>
 <p>Take care of yourself. And thank you for making some of my days beautiful.</p>
     </div>
+    <div class="letter-tools"><span>TAKE YOUR TIME</span><button class="copy-btn" id="copyLetter">COPY LETTER ↗</button></div>
   </article>
 </section>
+
+<div class="quote-band reveal"><div class="mark">“</div><p>Not everything that matters needs to be said loudly.</p><small>A LITTLE SPACE FOR WHAT REMAINS</small></div>
 </main>
 <footer><div class="credit">DESIGNED & DEVELOPED BY</div><strong>Sohom Giri</strong><p>A little world made of memories.</p></footer>
 
-<div class="player glass" id="player">
-  <button class="play" id="playerToggle" aria-label="Play or pause">▶</button>
-  <div class="player-info"><div class="player-title" id="nowTitle">Now playing</div><input id="seek" type="range" min="0" max="100" value="0" aria-label="Seek"></div>
-  <div class="player-time" id="timeLabel">0:00 / 0:00</div>
+<div class="now-player glass" id="player">
+  <button class="play" id="playerToggle" aria-label="Play or pause">Ⅱ</button>
+  <div><div class="now-title" id="nowTitle">Now playing</div><input id="seek" type="range" min="0" max="100" value="0" aria-label="Seek"><div class="now-time" id="timeLabel">0:00 / 0:00</div></div>
+  <button class="player-close" id="closePlayer" aria-label="Close player">×</button>
 </div>
-<div class="lightbox" id="lightbox"><button class="close" id="closeLightbox" aria-label="Close">×</button><img id="lightboxImg" alt="Selected photograph"></div>
+<div class="lightbox" id="lightbox"><button id="closeLightbox" aria-label="Close">×</button><img id="lightboxImg" alt="Selected photograph"></div>
 <div class="toast" id="toast" role="status"></div>
 <audio id="audio" preload="metadata"></audio>
-
 <script>
-(() => {
-  "use strict";
-  const $ = s => document.querySelector(s);
-  const audio = $("#audio"), player = $("#player"), seek = $("#seek");
-  let currentButton = null, toastTimer;
-  const toast = message => { const el=$("#toast"); el.textContent=message; el.classList.add("show"); clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.remove("show"),2600); };
-  const time = seconds => { if(!Number.isFinite(seconds)) return "—:—"; const m=Math.floor(seconds/60),s=Math.floor(seconds%60); return `${m}:${String(s).padStart(2,"0")}`; };
-
-  // GitHub Pages does not expose directory listings. Probe numbered filenames instead.
-  // Keep numbering continuous (photo1, photo2, photo3...) and use the extensions below.
-  async function exists(path){
-    try { const r=await fetch(path,{method:"HEAD",cache:"no-store"}); return r.ok; }
-    catch(e){ return false; }
-  }
-  async function discover(prefix, extensions, max=80){
-    const found=[];
-    for(let n=1;n<=max;n++){
-      let match=null;
-      for(const ext of extensions){ const path=`${prefix}${n}.${ext}`; if(await exists(path)){match=path;break;} }
-      if(match) found.push(match);
-      else if(n>1) break;
-    }
-    return found;
-  }
-  function showEmpty(container,title,help){
-    container.innerHTML=`<div class="empty glass"><strong>${title}</strong>${help}</div>`;
-  }
-  async function loadPhotos(){
-    const gallery=$("#gallery"), files=await discover("photo",["jpg","jpeg","png","webp"]);
-    if(!files.length){showEmpty(gallery,"Photographs will appear here","Add photo1.jpg, photo2.jpg, photo3.jpg… beside index.html. Use consecutive numbering.");return;}
-    gallery.innerHTML="";
-    files.forEach((src,i)=>{
-      const card=document.createElement("button");card.className="photo";card.type="button";card.setAttribute("aria-label",`Open photo ${i+1}`);
-      const img=document.createElement("img");img.src=src;img.alt=`Photo ${i+1}`;img.loading="lazy";
-      const label=document.createElement("span");label.className="photo-label";label.textContent=`FRAME 0${i+1}`;
-      card.append(img,label);card.addEventListener("click",()=>{ $("#lightboxImg").src=src;$("#lightbox").classList.add("open"); });gallery.append(card);
-    });
-  }
-  function addAudio(container,src,index,kind){
-    const card=document.createElement("div");card.className="audio-card glass";
-    const button=document.createElement("button");button.className="play";button.type="button";button.textContent="▶";button.setAttribute("aria-label",`Play ${kind} ${index}`);
-    const info=document.createElement("div"),title=document.createElement("div"),sub=document.createElement("div");
-    title.className="track-title";title.textContent=kind==="Song"?`Song ${index}`:`Voice Note ${index}`;
-    sub.className="track-sub";sub.textContent=kind==="Song"?"YOUR PLAYLIST":"VOICE RECORDING";
-    const duration=document.createElement("div");duration.className="track-duration";duration.textContent="…";
-    const probe=new Audio();probe.preload="metadata";probe.src=src;probe.addEventListener("loadedmetadata",()=>duration.textContent=time(probe.duration));probe.addEventListener("error",()=>duration.textContent="Audio");
-    info.append(title,sub);card.append(button,info,duration);container.append(card);
-    button.addEventListener("click",()=>{
-      if(audio.src.endsWith("/"+src) && !audio.paused){audio.pause();button.textContent="▶";return;}
-      if(currentButton) currentButton.textContent="▶";
-      audio.src=src;audio.play().then(()=>{button.textContent="Ⅱ";currentButton=button;$("#nowTitle").textContent=title.textContent;player.classList.add("show");}).catch(()=>toast("This audio could not be played. Check the file format."));
-    });
-  }
-  async function loadAudio(prefix,container,kind){
-    const files=await discover(prefix,["mp3","m4a","ogg","wav"]);
-    if(!files.length){showEmpty(container,kind==="Song"?"Your playlist is waiting":"Voice notes will appear here",`Add ${prefix}1.mp3, ${prefix}2.mp3, ${prefix}3.mp3… beside index.html.`);return;}
-    container.innerHTML="";files.forEach((src,i)=>addAudio(container,src,i+1,kind));
-  }
-  audio.addEventListener("timeupdate",()=>{if(audio.duration){seek.value=audio.currentTime/audio.duration*100;$("#timeLabel").textContent=`${time(audio.currentTime)} / ${time(audio.duration)}`;}});
-  audio.addEventListener("ended",()=>{if(currentButton)currentButton.textContent="▶";$("#playerToggle").textContent="▶";});
-  audio.addEventListener("play",()=>$("#playerToggle").textContent="Ⅱ");
-  audio.addEventListener("pause",()=>$("#playerToggle").textContent="▶");
-  $("#playerToggle").addEventListener("click",()=>{if(!audio.src)return;audio.paused?audio.play():audio.pause();});
-  seek.addEventListener("input",()=>{if(audio.duration)audio.currentTime=Number(seek.value)/100*audio.duration;});
-  $("#closeLightbox").addEventListener("click",()=>$("#lightbox").classList.remove("open"));
-  $("#lightbox").addEventListener("click",e=>{if(e.target.id==="lightbox")$("#lightbox").classList.remove("open");});
-  document.addEventListener("keydown",e=>{if(e.key==="Escape")$("#lightbox").classList.remove("open");});
-  Promise.all([loadPhotos(),loadAudio("voicenote",$("#voices"),"Voice Note"),loadAudio("song",$("#songsList"),"Song")]);
+(()=>{
+"use strict";
+const $=s=>document.querySelector(s),audio=$("#audio"),player=$("#player");
+let currentButton=null,toastTimer;
+const toast=m=>{let t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove("show"),2400)};
+const fmt=n=>Number.isFinite(n)?`${Math.floor(n/60)}:${String(Math.floor(n%60)).padStart(2,"0")}`:"—:—";
+window.addEventListener("load",()=>{setTimeout(()=>{$("#preloader").classList.add("done");document.body.classList.remove("lock")},850)});
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+const glow=$("#glow");window.addEventListener("pointermove",e=>{glow.style.left=e.clientX+"px";glow.style.top=e.clientY+"px"},{passive:true});
+function stars(){const c=$("#stars"),ctx=c.getContext("2d");let w,h,dots=[];function resize(){w=c.width=innerWidth*devicePixelRatio;h=c.height=innerHeight*devicePixelRatio;c.style.width=innerWidth+"px";c.style.height=innerHeight+"px";dots=Array.from({length:Math.min(110,Math.floor(innerWidth/8))},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.3+.2,a:Math.random()*.55+.1,s:Math.random()*.008+.002}))}function draw(){ctx.clearRect(0,0,w,h);dots.forEach(p=>{p.a+=p.s;if(p.a>.75||p.a<.08)p.s*=-1;ctx.fillStyle=`rgba(220,207,183,${p.a})`;ctx.beginPath();ctx.arc(p.x,p.y,p.r*devicePixelRatio,0,Math.PI*2);ctx.fill()});requestAnimationFrame(draw)}resize();addEventListener("resize",resize);draw()}stars();
+async function exists(path){try{return(await fetch(path,{method:"HEAD",cache:"no-store"})).ok}catch(e){return false}}
+async function discover(prefix,extensions,max=80){const found=[];for(let n=1;n<=max;n++){let match=null;for(const ext of extensions){let p=`${prefix}${n}.${ext}`;if(await exists(p)){match=p;break}}if(match)found.push(match);else if(n>1)break}return found}
+function empty(el,title,help){el.innerHTML="";let d=document.createElement("div");d.className="empty glass";let b=document.createElement("b");b.textContent=title;let span=document.createElement("span");span.textContent=help;let sm=document.createElement("small");sm.textContent="NUMBERED FILES · AUTOMATIC DISCOVERY";d.append(b,span,sm);el.append(d)}
+async function photos(){let g=$("#gallery"),files=await discover("photo",["jpg","jpeg","png","webp"]);if(!files.length){empty(g,"Photographs will appear here","Add photo1.jpg, photo2.jpg, photo3.jpg… beside index.html.");$("#photoCount").textContent="WAITING FOR PHOTOGRAPHS";return}g.innerHTML="";files.forEach((src,i)=>{let b=document.createElement("button");b.className="photo";b.type="button";let im=document.createElement("img");im.src=src;im.alt=`Photo ${i+1}`;im.loading="lazy";let cap=document.createElement("span");cap.className="photo-caption";cap.textContent=`A MOMENT TO KEEP`;let num=document.createElement("span");num.className="photo-number";num.textContent=String(i+1).padStart(2,"0");b.append(im,cap,num);b.addEventListener("click",()=>{$("#lightboxImg").src=src;$("#lightbox").classList.add("open")});g.append(b)});$("#photoCount").textContent=`${files.length} PHOTOGRAPH${files.length===1?"":"S"} IN THIS COLLECTION`}
+function audioCard(container,src,index,kind){let card=document.createElement("div");card.className="audio-card glass";let btn=document.createElement("button");btn.className="play";btn.type="button";btn.textContent="▶";let info=document.createElement("div"),title=document.createElement("div"),sub=document.createElement("div"),wave=document.createElement("div"),dur=document.createElement("span");title.className="audio-title";title.textContent=kind==="Song"?`Song ${index}`:`Voice Note ${index}`;sub.className="audio-sub";sub.textContent=kind==="Song"?"SONG":"VOICE RECORDING";wave.className="sound-wave";for(let i=0;i<23;i++){let bar=document.createElement("i");bar.style.setProperty("--h",`${5+Math.random()*16}px`);wave.append(bar)}info.append(title,sub,wave);dur.className="duration";dur.textContent="…";let probe=new Audio(src);probe.addEventListener("loadedmetadata",()=>dur.textContent=fmt(probe.duration));card.append(btn,info,dur);container.append(card);btn.addEventListener("click",()=>{if(audio.src.endsWith("/"+src)&&!audio.paused){audio.pause();return}audio.src=src;audio.play().then(()=>{if(currentButton)currentButton.textContent="▶";currentButton=btn;btn.textContent="Ⅱ";document.querySelectorAll(".audio-card").forEach(x=>x.classList.remove("playing"));card.classList.add("playing");$("#nowTitle").textContent=title.textContent;player.classList.add("show")}).catch(()=>toast("Couldn't play this file. Please check the audio format."))})}
+async function audioList(prefix,el,kind){let files=await discover(prefix,["mp3","m4a","ogg","wav"]);if(!files.length){empty(el,kind==="Song"?"Your playlist is waiting":"Voice notes will appear here",`Add ${prefix}1.mp3, ${prefix}2.mp3, ${prefix}3.mp3… beside index.html.`);return}el.innerHTML="";files.forEach((f,i)=>audioCard(el,f,i+1,kind))}
+audio.addEventListener("timeupdate",()=>{if(audio.duration){$("#seek").value=audio.currentTime/audio.duration*100;$("#timeLabel").textContent=`${fmt(audio.currentTime)} / ${fmt(audio.duration)}`}});
+audio.addEventListener("play",()=>$("#playerToggle").textContent="Ⅱ");audio.addEventListener("pause",()=>{$("#playerToggle").textContent="▶";if(currentButton)currentButton.textContent="▶";document.querySelectorAll(".audio-card").forEach(x=>x.classList.remove("playing"))});
+audio.addEventListener("ended",()=>{if(currentButton)currentButton.textContent="▶"});
+$("#playerToggle").addEventListener("click",()=>{if(audio.src)audio.paused?audio.play():audio.pause()});$("#seek").addEventListener("input",e=>{if(audio.duration)audio.currentTime=Number(e.target.value)/100*audio.duration});$("#closePlayer").addEventListener("click",()=>{audio.pause();player.classList.remove("show")});
+$("#closeLightbox").addEventListener("click",()=>$("#lightbox").classList.remove("open"));$("#lightbox").addEventListener("click",e=>{if(e.target.id==="lightbox")$("#lightbox").classList.remove("open")});document.addEventListener("keydown",e=>{if(e.key==="Escape")$("#lightbox").classList.remove("open")});
+$("#copyLetter").addEventListener("click",async()=>{let text=[...$("#letterText").querySelectorAll("p")].map(p=>p.textContent).join("\n\n");try{await navigator.clipboard.writeText(text);toast("Letter copied")}catch(e){toast("Copy is unavailable in this browser")}});
+Promise.all([photos(),audioList("voicenote",$("#voices"),"Voice Note"),audioList("song",$("#songsList"),"Song")]);
 })();
 </script>
-</body>
-</html>
+</body></html>
